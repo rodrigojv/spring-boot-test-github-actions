@@ -19,9 +19,8 @@ public class JsonPlaceholderTaskRepository implements TaskRepository {
 
     @Override
     public Task findOne(Integer id) {
-        Integer nextId = 2;
         return restTemplate
-                .getForObject("/todos/{id}", Task.class, nextId);
+                .getForObject("/todos/{id}", Task.class, id);
     }
 
     @Override
