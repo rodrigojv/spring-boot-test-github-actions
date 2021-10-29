@@ -3,6 +3,10 @@ name: Corre el build y los tests
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - ".github/**"
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -17,7 +21,6 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 14
-          cache: "maven"
 
       - name: Cache Maven packages
         uses: actions/cache@v2
