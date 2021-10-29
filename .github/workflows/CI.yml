@@ -1,7 +1,7 @@
 name: Corre el build y los tests
 
 on: push
-workflow_enabled:
+  workflow_enabled:
 
 jobs:
   build:
