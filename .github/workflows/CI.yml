@@ -1,6 +1,6 @@
 name: Corre el build y los tests
 
-on: 
+on:
   push:
     branches: [main]
   workflow_dispatch:
@@ -18,13 +18,13 @@ jobs:
         with:
           java-version: 14
           cache: "maven"
-      
+
       - name: Cache Maven packages
-          uses: actions/cache@v2
-          with:
-            path: ~/.m2
-            key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-            restore-keys: ${{ runner.os }}-m2    
-      
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+
       - name: Test with Maven
         run: mvn -B test --file pom.xml
