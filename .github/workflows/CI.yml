@@ -1,7 +1,9 @@
 name: Corre el build y los tests
 
-on: push
-  workflow_enabled:
+on: 
+  push:
+    branches: [main]
+  workflow_dispatch:
 
 jobs:
   build:
